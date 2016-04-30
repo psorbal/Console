@@ -1,2 +1,3 @@
-# InteractiveConsole
+# Console
 Console which will allow user to execute a few commands.
+
