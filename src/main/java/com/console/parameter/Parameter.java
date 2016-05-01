@@ -6,6 +6,9 @@ import java.util.List;
 
 /**
  * Class for parameter using in commands.
+ * This class has implemented observer pattern.
+ * Observer pattern is used when there is one-to-many relationship between objects such as if one object is modified,
+ * its dependent objects are to be notified automatically.
  */
 
 public class Parameter implements ConcreteObserver {
