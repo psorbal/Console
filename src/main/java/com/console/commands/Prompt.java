@@ -30,13 +30,13 @@ public class Prompt implements Command, Observer {
 
     public void executeCommand() {
         if(command.matches("prompt reset")){
-            parameter.setParameter("$");
+            setParameterExecute("$");
         }
         else if (command.matches("prompt \\$cwd")){
-            parameter.setParameter(System.getProperty("user.dir"));
+            setParameterExecute(System.getProperty("user.dir"));
         }
         else {
-            parameter.setParameter(command.substring(7));
+            setParameterExecute(command.substring(7));
         }
     }
 
@@ -45,5 +45,9 @@ public class Prompt implements Command, Observer {
     }
 
     public void update() {
+    }
+
+    private void setParameterExecute(String string){
+        parameter.setParameter(string);
     }
 }
