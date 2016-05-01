@@ -6,9 +6,6 @@ import java.util.List;
 
 /**
  * Class for parameter using in commands.
- * To create this class, was used Singleton pattern.
- * The Singleton pattern ensures that a class has only one instance
- * and provides a global point of access to that instance.
  */
 
 public class Parameter implements ConcreteObserver {
