@@ -3,7 +3,7 @@ Console which will allow user to execute a few commands.
 
 ## All available commands in console
 ### prompt
-User can customize the presented prompt using a***prompt***command with a parameter.
+User can customize the presented prompt using a ***prompt*** command with a parameter.
 Possible values of the parameter:
 * ***$cwd*** will result in displaying a path to current working directory in the prompt
 * ***reset*** will reset the prompt to default ($ sign)
@@ -20,7 +20,7 @@ Possible values of the parameter:
 ```
 
 ### dir
-User can display the content of current working directory using a***dir***command.
+User can display the content of current working directory using a ***dir*** command.
 Format of the display: type of the item (DIR|FILE) and name of the item.
 
 **Example:**
@@ -36,7 +36,7 @@ DIR surefire
 ```
 
 ### cd
-User can change the current working directory using a***cd***command with a parameter:
+User can change the current working directory using a ***cd*** command with a parameter:
 * **..** for parent directory
 * Name of existing subdirectory
 
@@ -71,7 +71,7 @@ and its subdirectories using a***tree***command.
  ```
 
 ### exit
-User can terminate the application by using***exit***command.
+User can terminate the application by using ***exit*** command.
 
 **Example:**
 ```sh
