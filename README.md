@@ -1,10 +1,7 @@
 # Console
 Console which will allow user to execute a few commands.
----
 
 ## All available commands in console
----
-
 ### prompt
 User can customize the presented prompt using a***prompt***command with a parameter.
 Possible values of the parameter:
