@@ -1,9 +1,8 @@
 # Console
 Console which will allow user to execute a few commands.
-
+---
 
 ## All available commands in console
-
 ---
 
 ### prompt
