@@ -14,7 +14,6 @@ import com.console.commands.*;
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
     private static boolean isExecuting = true;
-    private static boolean matchFound = false;
 
     public static void main(String[] args){
         Parameter parameter = new Parameter();
@@ -26,6 +25,7 @@ public class Main {
         activeCommand.add(new Exit());
 
         while(isExecuting){
+            boolean matchFound = false;
             System.out.print("[MyShell] " + parameter.getParameter() + ">");
             String userCommand = getScanner();
 
