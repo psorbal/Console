@@ -53,7 +53,7 @@ This subdirectory does not exist
 
 ### tree
 User can display the directory structure of current working directory
-and its subdirectories using a***tree***command.
+and its subdirectories using a ***tree*** command.
 
 **Example:**
  ```sh
@@ -67,6 +67,17 @@ and its subdirectories using a***tree***command.
  --annotations
  -maven-archiver
  -surefire
+ [MyShell] $>
+ ```
+### ctdir
+User can create a new directory in current working directory using a ***ctdir*** command.
+
+**Example:**
+ ```sh
+ [MyShell] $>ctdir newDirectory
+ Directory newDirectory is created!
+ [MyShell] $>ctdir newDirectory
+ newDirectory directory exist in this current working directory
  [MyShell] $>
  ```
 
