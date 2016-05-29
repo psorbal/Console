@@ -80,6 +80,17 @@ User can create a new directory in current working directory using a ***ctdir***
  newDirectory directory exist in this current working directory
  [MyShell] $>
  ```
+### ctfile
+User can create a new file in current working directory using a ***ctfile*** command.
+
+**Example:**
+ ```sh
+ [MyShell] $>ctfile newfile
+ newfile is created!
+ [MyShell] $>ctfile newfile
+ newfile already exists
+ [MyShell] $>
+ ```
 
 ### exit
 User can terminate the application by using ***exit*** command.

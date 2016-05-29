@@ -23,6 +23,7 @@ public class Main {
         activeCommand.add(new Tree(parameter));
         activeCommand.add(new Cd(parameter));
         activeCommand.add(new Ctdir(parameter));
+        activeCommand.add(new Ctfile(parameter));
         activeCommand.add(new Exit());
 
         while(isExecuting){
