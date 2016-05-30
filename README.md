@@ -92,32 +92,32 @@ User can create a new file in current working directory using a ***ctfile*** com
  [MyShell] $>
  ```
 
- ### delete
- User can delete files using a ***delete*** command with a parameter.
- Possible values of the parameter:
- * ***all*** will delete all files (also directory and his subdirectory!) in current working directory
- * ***.**** will delete files ends with regex (eg. with extension .txt)
- * ****.*** will delete files starts wit regex (eg. with ok*)
- * Any other string will delete name of single file if exists
+### delete
+User can delete files using a ***delete*** command with a parameter.
+Possible values of the parameter:
+* ***all*** will delete all files (also directory and his subdirectory!) in current working directory
+* ***.**** will delete files ends with regex (eg. with extension .txt)
+* ****.*** will delete files starts wit regex (eg. with ok*)
+* Any other string will delete name of single file if exists
 
- **Example:**
- ```sh
- [MyShell] $>delete nice
- nice is deleted
- [MyShell] $>delete ok*
- okay is deleted
- oki is deleted
- okk id deleted
- [MyShell] $>delete .txt
- yes.txt is deleted
- nope.txt is deleted
- [MyShell] end>delete nonexists
- Delete operation has failed
- [MyShell] $>delete all
- del.txt is deleted
- end is deleted
- [MyShell] $>
- ```
+**Example:**
+```sh
+[MyShell] $>delete nice
+nice is deleted
+[MyShell] $>delete ok*
+okay is deleted
+oki is deleted
+okk id deleted
+[MyShell] $>delete .txt
+yes.txt is deleted
+nope.txt is deleted
+[MyShell] end>delete nonexists
+Delete operation has failed
+[MyShell] $>delete all
+del.txt is deleted
+end is deleted
+[MyShell] $>
+```
 
 ### exit
 User can terminate the application by using ***exit*** command.
