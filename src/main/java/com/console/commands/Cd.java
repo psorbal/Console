@@ -31,7 +31,7 @@ public class Cd implements Command, Observer {
     }
 
     public void executeCommand() {
-        if(command.matches("cd ..")){
+        if(command.matches("cd \\.\\.")){
             File directory = new File(path);
             if (directory.getParent() != null) {
                 setDir(directory.getParent());

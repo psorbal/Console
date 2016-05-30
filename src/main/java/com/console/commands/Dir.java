@@ -27,27 +27,27 @@ public class Dir implements Command, Observer {
     }
 
     public void executeCommand() {
-        File currDir = new File(path);
-        getAllFiles(currDir);
+        try{
+            File [] files = new File(path).listFiles();
+            if (files != null && files.length != 0) {
+                System.out.println("Content of " + path);
+                for (File f : files) {
+                    if (f.isDirectory()) {
+                        System.out.println("DIR \t\t" + f.getName());
+                    } else {
+                        System.out.println("FILE \t\t" + f.getName());
+                    }
+                }
+            }
+            else System.out.println("This folder is empty");
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     public boolean endLoop() {
         return true;
-    }
-
-    private void getAllFiles(File currDir){
-        File [] files = currDir.listFiles();
-        if (files != null) {
-            System.out.println("Content of " + currDir.getAbsolutePath());
-            for (File f : files) {
-                if (f.isDirectory()) {
-                    System.out.println("DIR \t\t" + f.getName());
-                } else {
-                    System.out.println("FILE \t\t" + f.getName());
-                }
-            }
-        }
-        else System.out.println("This pathname does not denote a directory, then listFiles() returns null");
     }
 
     public void update() {
