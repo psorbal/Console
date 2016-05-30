@@ -92,12 +92,12 @@ User can create a new file in current working directory using a ***ctfile*** com
  [MyShell] $>
  ```
 
- ### prompt
+ ### delete
  User can delete files using a ***delete*** command with a parameter.
  Possible values of the parameter:
  * ***all*** will delete all files (also directory and his subdirectory!) in current working directory
  * ***.**** will delete files ends with regex (eg. with extension .txt)
- * ***.**** will delete files starts wit regex (eg. with ok*)
+ * ****.*** will delete files starts wit regex (eg. with ok*)
  * Any other string will delete name of single file if exists
 
  **Example:**
