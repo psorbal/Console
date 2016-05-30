@@ -4,14 +4,13 @@ import java.io.File;
 import java.io.FilenameFilter;
 
 public class RegFilter implements FilenameFilter{
-    private String regf;
+    private String reg;
 
-    public RegFilter(String ext){
-        this.regf = ext;
+    public RegFilter(String startsWith){
+        this.reg = startsWith.substring(0, startsWith.length()-1);
     }
 
     public boolean accept(File file, String name) {
-        name = name.substring(0, name.length()-1);
-        return name.startsWith(regf);
+        return name.startsWith(reg);
     }
 }
