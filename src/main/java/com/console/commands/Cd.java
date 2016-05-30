@@ -23,7 +23,7 @@ public class Cd implements Command, Observer {
     }
 
     public boolean matches(String command) {
-        if (command.matches("cd (.*)")){
+        if (command.matches("cd (.+)")){
             this.command = command;
             return true;
         }

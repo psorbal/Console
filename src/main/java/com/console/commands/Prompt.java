@@ -21,7 +21,7 @@ public class Prompt implements Command, Observer {
     }
 
     public boolean matches(String command) {
-        if (command.matches("prompt (.*)")){
+        if (command.matches("prompt (.+)")){
             this.command = command;
             return true;
         }

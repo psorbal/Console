@@ -20,7 +20,7 @@ public class Ctdir implements Command, Observer {
     }
 
     public boolean matches(String command) {
-        if (command.matches("ctdir (.*)")){
+        if (command.matches("ctdir (.+)")){
             this.nameOfNewDirectory = command.substring(6);
             return true;
         }

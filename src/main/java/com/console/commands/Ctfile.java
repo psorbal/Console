@@ -21,7 +21,7 @@ public class Ctfile implements Command, Observer {
     }
 
     public boolean matches(String command) {
-        if (command.matches("ctfile (.*)")){
+        if (command.matches("ctfile (.+)")){
             this.nameOfNewFile = command.substring(7);
             return true;
         }

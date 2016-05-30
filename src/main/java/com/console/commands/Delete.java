@@ -18,7 +18,7 @@ public class Delete implements Command, Observer {
     }
 
     public boolean matches(String command) {
-        if (command.matches("delete (.*)")){
+        if (command.matches("delete (.+)")){
             this.nameOfFile = command.substring(7);
             return true;
         }
