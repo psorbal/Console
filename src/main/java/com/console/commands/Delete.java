@@ -11,7 +11,7 @@ public class Delete implements Command, Observer {
     private String path;
     private String nameOfFile;
 
-    public Delete(Parameter parameter){
+    public Delete(Parameter parameter) {
         this.parameter = parameter;
         parameter.addObserver(this);
         this.path = parameter.getPath();
@@ -21,21 +21,19 @@ public class Delete implements Command, Observer {
         if (command.matches("delete (.+)")){
             this.nameOfFile = command.substring(7);
             return true;
+        } else {
+            return false;
         }
-        else return false;
     }
 
     public void executeCommand() {
-        if(nameOfFile.matches("all")){
+        if (nameOfFile.matches("all")) {
             deleteAllFiles();
-        }
-        else if(nameOfFile.matches("(.+)\\*")){
+        } else if (nameOfFile.matches("(.+)\\*")) {
             deleteFileWithRegex();
-        }
-        else if (nameOfFile.matches("\\..+")){
+        } else if (nameOfFile.matches("\\..+")) {
             deleteFilesWithExtension();
-        }
-        else {
+        } else {
             deleteFileFullName();
         }
     }
@@ -48,34 +46,33 @@ public class Delete implements Command, Observer {
         this.path = parameter.getPath();
     }
 
-    private void deleteAllFiles(){
+    private void deleteAllFiles() {
         File [] files = new File(path).listFiles();
         deleteOperationFromListFiles(files);
     }
 
-    private void deleteFilesWithExtension(){
+    private void deleteFilesWithExtension() {
         ExtFilter filter = new ExtFilter(nameOfFile);
         File [] files = new File(path).listFiles(filter);
         deleteOperationFromListFiles(files);
     }
 
-    private void deleteFileWithRegex(){
+    private void deleteFileWithRegex() {
         RegFilter regFilter = new RegFilter(nameOfFile);
         File [] files = new File(path).listFiles(regFilter);
         deleteOperationFromListFiles(files);
     }
 
-    private void deleteFileFullName(){
+    private void deleteFileFullName() {
         File file = new File(path+"/"+nameOfFile);
-        if (file.delete()){
+        if (file.delete()) {
             System.out.println(nameOfFile + " is deleted");
-        }
-        else {
+        } else {
             System.out.println("Delete operation has failed");
         }
     }
 
-    private void deleteOperationFromListFiles(File[] files){
+    private void deleteOperationFromListFiles(File[] files) {
         if (files != null) {
             for (File f : files) {
                 if (f.delete()) {
@@ -84,7 +81,8 @@ public class Delete implements Command, Observer {
                     System.out.println(f.getName() + " - delete operation has failed");
                 }
             }
+        } else {
+            System.out.println("There is no files to delete");
         }
-        else System.out.println("There is no files to delete");
     }
 }

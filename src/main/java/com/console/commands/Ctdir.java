@@ -1,19 +1,19 @@
 package com.console.commands;
 
-/**
- * Class for command ctdir which allow to crate new folder
- */
-
 import com.console.parameter.Parameter;
 
 import java.io.File;
+
+/**
+ * Class for command ctdir which allow to crate new folder
+ */
 
 public class Ctdir implements Command, Observer {
     private Parameter parameter;
     private String nameOfNewDirectory;
     private String path;
 
-    public Ctdir(Parameter parameter){
+    public Ctdir(Parameter parameter) {
         this.parameter = parameter;
         parameter.addObserver(this);
         this.path = parameter.getPath();
@@ -23,20 +23,22 @@ public class Ctdir implements Command, Observer {
         if (command.matches("ctdir (.+)")){
             this.nameOfNewDirectory = command.substring(6);
             return true;
+        } else {
+            return false;
         }
-        else return false;
     }
 
     public void executeCommand() {
         File file = new File(path+"/"+nameOfNewDirectory);
-        if(!file.exists()) {
+        if (!file.exists()) {
             if (file.mkdir()) {
                 System.out.println("Directory "+nameOfNewDirectory+ " is created!");
             } else {
                 System.out.println("Failed to create "+nameOfNewDirectory+" directory!");
             }
+        } else {
+            System.out.println(nameOfNewDirectory + " directory exists in this current working directory");
         }
-        else System.out.println(nameOfNewDirectory + " directory exists in this current working directory");
     }
 
     public boolean endLoop() {

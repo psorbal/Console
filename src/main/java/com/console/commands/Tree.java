@@ -14,7 +14,7 @@ public class Tree implements Command, Observer {
     private Parameter parameter;
     private String path;
 
-    public Tree(Parameter parameter){
+    public Tree(Parameter parameter) {
         this.parameter = parameter;
         parameter.addObserver(this);
         this.path = parameter.getPath();
@@ -33,19 +33,19 @@ public class Tree implements Command, Observer {
         return true;
     }
 
-    private String printTree(File directory){
+    private String printTree(File directory) {
         int branch = 0;
         StringBuilder sb = new StringBuilder();
         printDirectoryTree(directory, branch, sb);
         return sb.toString();
     }
 
-    private void printDirectoryTree(File directory, int branch, StringBuilder sb){
+    private void printDirectoryTree(File directory, int branch, StringBuilder sb) {
         sb.append(getBranch(branch));
         sb.append(directory.getName());
         sb.append("\n");
         File [] files = directory.listFiles();
-        if(files != null) {
+        if (files != null) {
             for (File file : files) {
                 if (file.isDirectory() && !file.isHidden()) {
                     printDirectoryTree(file, branch + 1, sb);

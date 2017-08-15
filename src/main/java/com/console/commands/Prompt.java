@@ -15,27 +15,26 @@ public class Prompt implements Command, Observer {
     private String command;
     private Parameter parameter;
 
-    public Prompt(Parameter parameter){
+    public Prompt(Parameter parameter) {
         this.parameter = parameter;
         parameter.addObserver(this);
     }
 
     public boolean matches(String command) {
-        if (command.matches("prompt (.+)")){
+        if (command.matches("prompt (.+)")) {
             this.command = command;
             return true;
+        } else {
+            return false;
         }
-        else return false;
     }
 
     public void executeCommand() {
-        if(command.matches("prompt reset")){
+        if (command.matches("prompt reset")) {
             setParameterExecute("$");
-        }
-        else if (command.matches("prompt \\$cwd")){
+        } else if (command.matches("prompt \\$cwd")) {
             setParameterExecute(System.getProperty("user.dir"));
-        }
-        else {
+        } else {
             setParameterExecute(command.substring(7));
         }
     }
@@ -45,6 +44,7 @@ public class Prompt implements Command, Observer {
     }
 
     public void update() {
+        // nothing to do
     }
 
     private void setParameterExecute(String string){

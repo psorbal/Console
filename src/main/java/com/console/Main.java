@@ -1,6 +1,6 @@
-package com.console.running_app;
+package com.console;
 
-import com.console.Controller.Service;
+import com.console.controller.Service;
 
 /**
  * Main class for interactive console application
@@ -8,7 +8,7 @@ import com.console.Controller.Service;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Service service = new Service();
         service.startConsole();
     }

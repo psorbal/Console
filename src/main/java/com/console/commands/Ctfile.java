@@ -14,18 +14,19 @@ public class Ctfile implements Command, Observer {
     private String nameOfNewFile;
     private String path;
 
-    public Ctfile(Parameter parameter){
+    public Ctfile(Parameter parameter) {
         this.parameter = parameter;
         parameter.addObserver(this);
         this.path = parameter.getPath();
     }
 
     public boolean matches(String command) {
-        if (command.matches("ctfile (.+)")){
+        if (command.matches("ctfile (.+)")) {
             this.nameOfNewFile = command.substring(7);
             return true;
+        } else {
+            return false;
         }
-        else return false;
     }
 
     public void executeCommand() {
@@ -33,12 +34,10 @@ public class Ctfile implements Command, Observer {
             File file = new File(path+"/"+nameOfNewFile);
             if(file.createNewFile()){
                 System.out.println(nameOfNewFile + " is created.");
-            }
-            else {
+            } else {
                 System.out.println(nameOfNewFile + " already exists.");
             }
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

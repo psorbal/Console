@@ -23,28 +23,30 @@ public class Cd implements Command, Observer {
     }
 
     public boolean matches(String command) {
-        if (command.matches("cd (.+)")){
+        if (command.matches("cd (.+)")) {
             this.command = command;
             return true;
+        } else {
+            return false;
         }
-        else return false;
     }
 
     public void executeCommand() {
-        if(command.matches("cd \\.\\.")){
+        if (command.matches("cd \\.\\.")) {
             File directory = new File(path);
             if (directory.getParent() != null) {
                 setDir(directory.getParent());
+            } else {
+                System.out.println("This path does not have parent directory");
             }
-            else System.out.println("This path does not have parent directory");
-        }
-        else {
+        } else {
             command = command.substring(3);
             File directory = new File(command).getAbsoluteFile();
-            if(directory.exists()){
+            if (directory.exists()) {
                 setDir(directory.getAbsolutePath());
+            } else {
+                System.out.println("This directory does not exist in this scope");
             }
-            else System.out.println("This directory does not exist in this scope");
         }
     }
 

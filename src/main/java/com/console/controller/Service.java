@@ -1,4 +1,4 @@
-package com.console.Controller;
+package com.console.controller;
 
 import com.console.commands.*;
 import com.console.parameter.Parameter;

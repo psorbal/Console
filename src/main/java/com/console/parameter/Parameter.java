@@ -29,7 +29,7 @@ public class Parameter implements ConcreteObserver {
         return path;
     }
 
-    public void setPath(String parameter){
+    public void setPath(String parameter) {
         this.path = parameter;
         notifyAllObservers();
     }

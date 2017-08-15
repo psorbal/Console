@@ -27,7 +27,7 @@ public class Dir implements Command, Observer {
     }
 
     public void executeCommand() {
-        try{
+        try {
             File [] files = new File(path).listFiles();
             if (files != null && files.length != 0) {
                 System.out.println("Content of " + path);
@@ -38,10 +38,10 @@ public class Dir implements Command, Observer {
                         System.out.println("FILE \t\t" + f.getName());
                     }
                 }
+            } else {
+                System.out.println("This folder is empty");
             }
-            else System.out.println("This folder is empty");
-        }
-        catch(Exception e){
+        } catch(Exception e) {
             e.printStackTrace();
         }
     }
